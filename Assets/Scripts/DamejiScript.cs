@@ -39,11 +39,8 @@ public class DamejiScript : MonoBehaviour {
 
         yield return new WaitForSeconds(3); //3秒待つ
 
-        for (int i=0;i<10;i++) {
-            EnemyDamage.transform.position += new Vector3(-60.0f, 0.0f, 0.0f); //オブジェクトが動く
+        iTween.MoveBy(EnemyDamage, iTween.Hash("x", -600f));    //iTweenを用いてx座標を-600動かす
 
-            yield return new WaitForSeconds(0.1f); //3秒待つ
-        }
 
 
 
@@ -53,3 +50,12 @@ public class DamejiScript : MonoBehaviour {
 
 
 }
+
+
+/*
+ *for (int i=0;i<10;i++) {
+            EnemyDamage.transform.position += new Vector3(-60.0f, 0.0f, 0.0f); //オブジェクトが動く
+
+            yield return new WaitForSeconds(0.1f); //3秒待つ
+        }
+  */
