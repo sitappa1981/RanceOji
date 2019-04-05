@@ -7,8 +7,20 @@ using System.Collections;   //コルーチン処理を動かす準備
 public class DamejiScript : MonoBehaviour {
 
     public int PlayerD;
+    public int EnemyD;
+
+    public int PlayerSoldier;
+    public int EnemySoldier;
+
     public GameObject EnemyDamage;
     public GameObject PlayerDamage;
+
+    public Text PlayerDamageText;
+    public Text EnemyDamageText;
+
+    public Text PlayerSoldierText;
+    public Text EnemySoldierText;
+
 
 
 
@@ -23,6 +35,16 @@ public class DamejiScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        PlayerD = 100;
+        EnemyD = 100;
+
+        PlayerDamageText.text = PlayerD + "";
+        EnemyDamageText.text = EnemyD + "";
+
+        PlayerSoldier = 1000;
+
+
+
         StartCoroutine("TestCoroutine");
     }
 	
@@ -37,11 +59,18 @@ public class DamejiScript : MonoBehaviour {
 
     private IEnumerator TestCoroutine() {
 
-        yield return new WaitForSeconds(3); //3秒待つ
+        yield return new WaitForSeconds(1); //1秒待つ
 
         iTween.MoveBy(EnemyDamage, iTween.Hash("x", -600f));    //iTweenを用いてx座標を-600動かす
+        iTween.MoveBy(PlayerDamage, iTween.Hash("x", +600f));    //iTweenを用いてx座標を+600動かす
 
+        yield return new WaitForSeconds(2); //2秒待つ
 
+        EnemyD -= 50;
+        PlayerD -= 10;
+
+        PlayerDamageText.text = PlayerD + "";
+        EnemyDamageText.text = EnemyD + "";
 
 
     }
