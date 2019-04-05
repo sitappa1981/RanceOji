@@ -14,9 +14,12 @@ public class DamejiScript : MonoBehaviour {
 
     public GameObject EnemyDamage;
     public GameObject PlayerDamage;
+
     public Text PlayerDamageText;
     public Text EnemyDamageText;
 
+    public Text PlayerSoldierText;
+    public Text EnemySoldierText;
 
 
 
