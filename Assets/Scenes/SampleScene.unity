@@ -273,8 +273,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerD: 0
+  EnemyD: 0
   EnemyDamage: {fileID: 1441049670}
-  PlayerDamage: {fileID: 0}
+  PlayerDamage: {fileID: 2062706285}
+  PlayerDamageText: {fileID: 1712548237}
+  EnemyDamageText: {fileID: 2089059099}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
